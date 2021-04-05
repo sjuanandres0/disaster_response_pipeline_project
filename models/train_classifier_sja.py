@@ -3,9 +3,6 @@ import nltk
 nltk.download(['punkt', 'wordnet'])
 import pandas as pd
 import numpy as np
-pd.set_option('display.max_colwidth', None)
-pd.set_option('display.max_rows', 50)
-pd.set_option('display.max_columns', None)
 import re
 from sqlalchemy import create_engine
 from nltk.tokenize import word_tokenize
@@ -19,6 +16,7 @@ from sklearn.metrics import classification_report
 #from sklearn.multiclass import OneVsRestClassifier
 from sklearn.svm import LinearSVC
 import pickle
+import joblib
 
 def load_data(database_filepath):
     """Loads data previously saved in a database
@@ -72,7 +70,9 @@ def build_model(grid_search=False):
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
         ('clf', MultiOutputClassifier(RandomForestClassifier(
-                    min_samples_split=4, n_estimators=100)
+                    min_samples_split=2, n_estimators=50)
+#better results with min_samples_split=4, n_estimators=100, but
+#pickle file was bigger than 100mb so couln't be uploaded to GitHub
             ,n_jobs=-1))
     ])
 
@@ -126,9 +126,9 @@ def save_model(model, model_filepath):
       model_filepath (str): specified path
     OUTPUT: None
     """
-    #Reference: https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
-    pickle_out = open(model_filepath,'wb')
-    pickle.dump(model, pickle_out)
+#    pickle_out = open(model_filepath,'wb')
+#    pickle.dump(model, pickle_out)
+    joblib.dump(model, str(model_filepath), compress=6)
 
 
 def main():
@@ -146,7 +146,7 @@ def main():
 
         print('Evaluating model...')
         evaluate_model(model, X_test, y_test, category_names)
-        print('Evaluation results saved in {}'.format('results.csv')
+        print('Evaluation results saved in {}'.format('results.csv'))
 
         print('Saving model...\n    MODEL: {}'.format(model_filepath))
         save_model(model, model_filepath)
@@ -154,7 +154,7 @@ def main():
         print('Trained model saved!')
 
     else:
-        print('Please provide the filepath of the disaster messages database '\
+        print('\n********\nPlease provide the filepath of the disaster messages database '\
             'as the first argument and the filepath of the pickle file to '\
             'save the model to as the second argument. \n\nExample: python '\
             'train_classifier.py ../data/DisasterResponse.db classifier.pkl')

@@ -12,7 +12,7 @@ def load_data(messages_filepath, categories_filepath):
         df (pd.DataFrame) - DataFrame with messages and categories
     """
     messages = pd.read_csv(messages_filepath)
-    categories = pd.read_csv(categories_filepath')
+    categories = pd.read_csv(categories_filepath)
     df = messages.merge(categories)
     return df, categories
 
@@ -69,7 +69,7 @@ def main():
         print('Cleaned data saved to database!')
 
     else:
-        print('Please provide the filepaths of the messages and categories '\
+        print('\n********\nPlease provide the filepaths of the messages and categories '\
               'datasets as the first and second argument respectively, as '\
               'well as the filepath of the database to save the cleaned data '\
               'to as the third argument. \n\nExample: python process_data.py '\
