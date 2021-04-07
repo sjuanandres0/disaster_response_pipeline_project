@@ -32,10 +32,12 @@ def clean_data(df, categories):
     for column in categories:
         categories[column] = categories[column].apply(lambda x: x[-1])
         categories[column] = categories[column].astype(int)
+        categories[column] = categories[column].apply(lambda x: 1 if x>0 else x) #new line to comply with binary (replacing 2 in related with 1)
     categories = pd.concat([categories_id, categories], axis=1)
     df.drop('categories', axis=1, inplace=True)
     df = df.merge(categories, on='id')
     df.drop_duplicates(inplace=True)
+#    print(df.related.unique())
     return df
 
 
