@@ -4,13 +4,13 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Project Components](#components)
-    2.1. [ETL Pipeline](#etlpipe)
-    2.2. [ML Pipeline](#mlpipe)
+2. [Project Components](#components)\
+    2.1. [ETL Pipeline](#etlpipe)\
+    2.2. [ML Pipeline](#mlpipe)\
     2.3. [Flask Web App](#webapp)
-3. [Program](#program)
-    3.1. [Dependencies](#dependencies)
-    3.2. [Running](#running)
+3. [Program](#program)\
+    3.1. [Dependencies](#dependencies)\
+    3.2. [Running](#running)\
     3.3. [Additional Material](#additional)
 4. [Acknowledgement](#acknowledgement)
 5. [Screenshots](#screenshots)
@@ -34,7 +34,7 @@ There are three main components.
 
 
 <a name='etlpip'></a>
-#### 2.1 ETL Pipeline
+### 2.1 ETL Pipeline
 File `process_data.py` contains a ETL (Extract, Transform and Load
   Pipeline) that:
 - Loads the `messages` and `categories` datasets
@@ -44,7 +44,7 @@ File `process_data.py` contains a ETL (Extract, Transform and Load
 
 
 <a name='mlpipe'></a>
-#### 2.2 ML Pipeline
+### 2.2 ML Pipeline
 File `train_classifier.py` contains a Machine Learning Pipeline that:
 - Loads data from the SQLite database
 - Splits the dataset into training and test sets
@@ -55,7 +55,7 @@ File `train_classifier.py` contains a Machine Learning Pipeline that:
 
 
 <a name='webapp'></a>
-#### 2.3 Flask Web App
+### 2.3 Flask Web App
 File `run.py` builds a webapp where users can input a message and it will be
 classified with the previously trained model.
 
@@ -64,7 +64,7 @@ classified with the previously trained model.
 
 
 <a name='dependencies'></a>
-#### 3.1 Dependencies
+### 3.1 Dependencies
 * Python 3.5+
 * Machine Learning Libraries: NumPy, Pandas, Scikit-Learn
 * Natural Language Process Libraries: NLTK
@@ -73,7 +73,7 @@ classified with the previously trained model.
 
 
 <a name='running'></a>
-#### 3.2 Running:
+### 3.2 Running:
 Run the following commands in the project's root directory to set up your
 database and model.
 Note that steps 1 and 2 (ETL and ML) are optional because the model already
@@ -89,7 +89,7 @@ trained is in the repository.
 
 
 <a name='Additional'></a>
-#### 3.3 Additional Material
+### 3.3 Additional Material
 In the `Notebooks` directory, you may find ETL and ML Pipelines in a Jupyter
 Notebook that may help you understand how the model work step by step.
 
