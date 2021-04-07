@@ -2,22 +2,22 @@
 ![Home Pic](img/home.png)
 
 
-### Table of Contents
+## Table of Contents
 1. [Introduction](#introduction)
 2. [Project Components](#components)
-  1. [ETL Pipeline](#etlpipe)
-  2. [ML Pipeline](#mlpipe)
-  3. [Flask Web App](#webapp)
+    2.1. [ETL Pipeline](#etlpipe)
+    2.2. [ML Pipeline](#mlpipe)
+    2.3. [Flask Web App](#webapp)
 3. [Program](#program)
-  1. [Dependencies](#dependencies)
-  2. [Running](#running)
-  3. [Additional Material](#additional)
+    3.1. [Dependencies](#dependencies)
+    3.2. [Running](#running)
+    3.3. [Additional Material](#additional)
 4. [Acknowledgement](#acknowledgement)
 5. [Screenshots](#screenshots)
 
 
 <a name='introduction'></a>
-### Introduction:
+## 1. Introduction
 This Project is part of the Data Science Nanodegree Program given by Udacity in
 collaboration with Figure Eight.
 
@@ -29,12 +29,12 @@ messages.
 
 
 <a name='components'></a>
-### Project components
+## 2. Project components
 There are three main components.
 
 
 <a name='etlpip'></a>
-#### ETL Pipeline
+#### 2.1 ETL Pipeline
 File `process_data.py` contains a ETL (Extract, Transform and Load
   Pipeline) that:
 - Loads the `messages` and `categories` datasets
@@ -44,7 +44,7 @@ File `process_data.py` contains a ETL (Extract, Transform and Load
 
 
 <a name='mlpipe'></a>
-#### ML Pipeline
+#### 2.2 ML Pipeline
 File `train_classifier.py` contains a Machine Learning Pipeline that:
 - Loads data from the SQLite database
 - Splits the dataset into training and test sets
@@ -55,16 +55,16 @@ File `train_classifier.py` contains a Machine Learning Pipeline that:
 
 
 <a name='webapp'></a>
-#### Flask Web App
+#### 2.3 Flask Web App
 File `run.py` builds a webapp where users can input a message and it will be
 classified with the previously trained model.
 
 <a name='program'></a>
-### Program
+## 3. Program
 
 
 <a name='dependencies'></a>
-#### Dependencies
+#### 3.1 Dependencies
 * Python 3.5+
 * Machine Learning Libraries: NumPy, Pandas, Scikit-Learn
 * Natural Language Process Libraries: NLTK
@@ -73,7 +73,7 @@ classified with the previously trained model.
 
 
 <a name='running'></a>
-#### Running:
+#### 3.2 Running:
 Run the following commands in the project's root directory to set up your
 database and model.
 Note that steps 1 and 2 (ETL and ML) are optional because the model already
@@ -89,7 +89,7 @@ trained is in the repository.
 
 
 <a name='Additional'></a>
-#### Additional Material
+#### 3.3 Additional Material
 In the `Notebooks` directory, you may find ETL and ML Pipelines in a Jupyter
 Notebook that may help you understand how the model work step by step.
 
@@ -103,17 +103,17 @@ parameters, pickle size file was considerably reduced.
 
 
 <a name="acknowledgement"></a>
-### Acknowledgements
+## 4. Acknowledgements
 * [Udacity](https://www.udacity.com/) for providing such a complete Data Science
 Nanodegree Program
 * [Figure Eight](https://www.figure-eight.com/) for providing the dataset.
 
 
 <a name="screenshots"></a>
-### Screenshots
-1. Home page - input section
+## 5. Screenshots
+- Home page - input section
 ![Home](img/home.png)
-2. Home page - dataset overview section
+- Home page - dataset overview section
 ![dataset_overview](img/dataset_overview.png)
-3. Output - message classified
+- Output - message classified
 ![message_classified](img/message_classified.png)
