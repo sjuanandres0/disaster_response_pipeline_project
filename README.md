@@ -24,7 +24,7 @@ collaboration with Figure Eight.
 The initial dataset contains pre-labelled messages that were sent during
 disaster events.
 
-The aim of the project is to build a Natural Processing tool to categorize
+The aim of the project is to build a Natural Language Processing tool to categorize
 messages.
 
 
